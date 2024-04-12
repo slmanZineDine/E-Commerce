@@ -1,10 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+// Bootstrap stylesheet
+import "bootstrap/dist/css/bootstrap.min.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+// React
+import ReactDOM from "react-dom/client";
+// My-components
+import AppRouter from "@routes/AppRouter";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<AppRouter />);
