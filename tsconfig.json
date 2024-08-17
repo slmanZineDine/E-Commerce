@@ -22,7 +22,11 @@
          "@components/*": ["components/*"],
          "@layouts/*": ["layouts/*"],
          "@pages/*": ["pages/*"],
-         "@routes/*": ["routes/*"]
+         "@routes/*": ["routes/*"],
+         "@styles/*": ["styles/*"],
+         "@redux/*": ["redux/*"],
+         "@customTypes/*": ["types/*"],
+         "@services/*": ["services/*"]
       },
 
       /* Linting */
