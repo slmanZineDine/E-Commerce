@@ -1,13 +1,15 @@
 // My-Components
-import { HeaderBacket } from "@components/index";
 // Third-Party ====> Bootstrap
 import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 // Third-Party ====> React-Router
 import { NavLink } from "react-router-dom";
+// SVG
+import { HeaderBacket } from "@components/index";
+import HeaderWishlist from "@components/ecommerce/Wishlist/HeaderWishlist";
 // Styles
 import styles from "./styles.module.css";
 
-const { headerContainer, headerLogo } = styles;
+const { headerContainer, headerLogo, headerLeftBar } = styles;
 
 const Header = () => {
    return (
@@ -16,7 +18,10 @@ const Header = () => {
             <h1 className={headerLogo}>
                <span>our</span> <Badge bg="info">Store</Badge>
             </h1>
-            <HeaderBacket />
+            <div className={headerLeftBar}>
+               <HeaderWishlist />
+               <HeaderBacket />
+            </div>
          </div>
          <Navbar
             expand="lg"

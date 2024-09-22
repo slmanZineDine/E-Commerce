@@ -17,7 +17,14 @@ const Products = () => {
 
    // ################### REDUX HOOKS ###################
    const dispatch = useAppDispatch();
+   const cartItems = useAppSelector((state) => state.cart.items);
    const { loading, error, records } = useAppSelector(selectProducts);
+
+   // ################### DATA ###################
+   const productsFullInfo = records.map((el) => ({
+      ...el,
+      quantity: cartItems[el.id] || 0,
+   }));
 
    // ################### SIDE EFFECT ###################
    useEffect(() => {
@@ -34,7 +41,7 @@ const Products = () => {
       <Container>
          <Loading status={loading} error={error}>
             <GridList
-               records={records}
+               records={productsFullInfo}
                renderItem={(record) => <Product {...record} />}
             />
          </Loading>

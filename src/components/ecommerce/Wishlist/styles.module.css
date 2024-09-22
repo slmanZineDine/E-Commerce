@@ -3,6 +3,8 @@
    cursor: pointer;
    display: flex;
    align-items: center;
+   border-inline-end: 1px solid black;
+   padding-inline-end: 0.5rem;
 }
 
 .container h3 {

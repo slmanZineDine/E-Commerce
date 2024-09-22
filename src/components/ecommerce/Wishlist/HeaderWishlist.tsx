@@ -2,19 +2,19 @@
 import { useSelector } from "react-redux";
 import { getCartTotalQuantitySelector } from "@redux/slices/cart/selectors/getCartTotalQuantitySelector";
 // Svg
-import BacketIcon from "@assets/svg/cart.svg?react";
+import WishlistIcon from "@assets/svg/wishlist.svg?react";
 
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 // Styles
 const { container, totalNum, pumpAnimate, iconWrapper } = styles;
 
-const HeaderBasket = () => {
+const HeaderWishlist = () => {
    // ################### REACT HOOKS ###################
    const [isAnimate, setIsAnimate] = useState(false);
 
    // ################### REDUX HOOKS ###################
-   const cartQuantity = useSelector(getCartTotalQuantitySelector);
+   const cartQuantity = 0;
 
    // ################### STYLING ###################
    const quantityStyle = `${totalNum} ${isAnimate ? pumpAnimate : ""}`;
@@ -36,14 +36,14 @@ const HeaderBasket = () => {
    return (
       <div className={container}>
          <div className={iconWrapper}>
-            <BacketIcon title="Basket-Icon" />
+            <WishlistIcon title="Basket-Icon" />
             {cartQuantity > 0 && (
                <div className={quantityStyle}>{cartQuantity}</div>
             )}
          </div>
-         <h3>Cart</h3>
+         <h3>Wishlist</h3>
       </div>
    );
 };
 
-export default HeaderBasket;
+export default HeaderWishlist;

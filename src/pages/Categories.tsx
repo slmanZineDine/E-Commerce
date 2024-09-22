@@ -11,6 +11,7 @@ import { Category } from "@components/index";
 import { Container } from "react-bootstrap";
 import GridList from "@components/common/GridList/GridList";
 import Loading from "@components/feedback/Loading/Loading";
+import Heading from "@components/common/Heading/Heading";
 
 const Categories = () => {
    // ################### REDUX HOOKS ###################
@@ -26,6 +27,7 @@ const Categories = () => {
 
    return (
       <Container>
+         <Heading>Categories</Heading>
          <Loading status={loading} error={error}>
             <GridList
                records={records}
